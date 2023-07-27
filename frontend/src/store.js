@@ -1,7 +1,7 @@
 import { reactive } from "vue";
 
 export const store = reactive({
-    baseUrl: 'https://back.michelegiovagnoli1.it',
+    baseUrl: 'http://127.0.0.1:8000',
     loading: true,
 });
 

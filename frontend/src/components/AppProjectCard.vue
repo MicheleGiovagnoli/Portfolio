@@ -16,8 +16,10 @@
                 <div class="btn-group">
                     <router-link :to="{ name: 'single-post', params: { slug: project.slug } }"
                         class="btn btn-sm btn-outline-secondary">
-                        Apri
+                        Info
                     </router-link>
+                    <a :href="`http://${project.title}.michelegiovagnoli1.it/`"
+                        class="btn btn-sm btn-outline-secondary">Web</a>
                 </div>
                 <!-- tecnologie -->
                 <small class="text-body-secondary">
@@ -48,7 +50,7 @@ export default {
                 return text.substr(0, this.contentMaxLength) + '...';
             }
             return text;
-        }
+        },
     }
 };
 </script>
