@@ -18,8 +18,8 @@
                         class="btn btn-sm btn-outline-secondary">
                         Info
                     </router-link>
-                    <a :href="`http://${project.title}.michelegiovagnoli1.it/`"
-                        class="btn btn-sm btn-outline-secondary">Web</a>
+                    <a :href="`http://${project.title}.michelegiovagnoli1.it/`" class="btn btn-sm btn-outline-secondary"
+                        v-show="project.title != 'Deliveboo'">Web</a>
                 </div>
                 <!-- tecnologie -->
                 <small class="text-body-secondary">

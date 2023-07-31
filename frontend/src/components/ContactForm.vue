@@ -15,16 +15,19 @@
                         <label for="email">Email</label>&nbsp; <br />
                         <input type="email" id="email" max="50" v-model="email" placeholder=" email@esempio.com" required>
                         <p class="input-error last" v-if="!email">{{ errors.email }}</p>
-                        <p class="input-error" v-if="!email.includes('@') || !checkValidEmail(email) || email.length < 3">
-                            {{ errors.email_validation }}</p>
+                        <div v-show="email">
+                            <p class="input-error"
+                                v-if="!email.includes('@') || !checkValidEmail(email) || email.length < 3">
+                                {{ errors.email_validation }}</p>
+                        </div>
                     </div>
                 </fieldset>
                 <!-- Messaggio Utente -->
                 <fieldset>
-                    <textarea class="form-control" id="message" v-model="message" :class="{ 'is-invlaid': errors.message }"
-                        placeholder="Testo" minlength="3" maxlength="500" required></textarea>
-                    <div class="invalid-feedback" v-for="error in errors.message">
-                        {{ error }}
+                    <textarea class="form-control" id="message" v-model="message" placeholder="Testo" minlength="3"
+                        maxlength="500" required></textarea>
+                    <div class="input-error" v-if="!message.length > 0">
+                        {{ errors.message }}
                     </div>
                 </fieldset>
                 <!-- Bottone Invio dati -->
@@ -64,10 +67,11 @@ export default {
             sending: false,
             alert: false,
             errors: {
-                name: '* Inserisci un nome valido',
-                email: "* Inserire l'e-mail",
-                email_validation: "* Inserire un email valida",
-                button: '* Compilare correttamente tutti i campi'
+                name: '* Inserire un nome',
+                email: "* Inserire un'e-mail",
+                email_validation: "* Inserire un'email valida",
+                button: '* Compilare correttamente tutti i campi',
+                message: '* Inserire un messaggio',
             },
             error: {},
         }
@@ -111,6 +115,7 @@ export default {
             if (
                 !this.name
                 || !this.email
+                || !this.message
                 || !this.email.includes('@')
                 || !this.checkValidEmail(this.email)
                 || email.length < 3
