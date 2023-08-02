@@ -37,8 +37,69 @@
                 </ul>
             </div>
         </section>
-        <h3>Skills.</h3>
-
+        <section id="skills">
+            <h3 class="title">Skills.</h3>
+            <ul class="container m-0">
+                <li class="front-end ms-3">
+                    <h3 class="font-14 color-white m-0">Front-end</h3>
+                    <ul class="list-style">
+                        <li>
+                            <i class="fa-brands fa-html5 fa-beat fa-xl" style="color: #e44d25;"></i>
+                            HTML5
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-css3-alt fa-beat fa-xl" style="color: #379ad6;"></i>
+                            CSS3
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-square-js fa-beat fa-xl" style="color: #f0dc4e;"></i>
+                            Javascript
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-vuejs fa-beat fa-xl" style="color: #3fb984;"></i>
+                            Vue
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-code fa-beat fa-xl" style="color: #ffeaa7;"></i>
+                            Axios
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-code fa-beat fa-xl" style="color: #ffeaa7;"></i>
+                            JQuery
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-sass fa-beat fa-xl" style="color: #ce679a;"></i>
+                            SASS
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-bootstrap fa-beat fa-xl" style="color: #5b4282;"></i>
+                            Bootstrap
+                        </li>
+                    </ul>
+                </li>
+                <li class="back-end ms-3">
+                    <h3 class="font-14 color-white m-0">Back-end</h3>
+                    <ul class="list-style">
+                        <li>
+                            <i class="fa-brands fa-php fa-beat fa-xl" style="color: #787cb4;"></i>
+                            PHP
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-laravel fa-beat fa-xl" style="color: #ef3b2d;"></i>
+                            Laravel
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-database fa-beat fa-xl" style="color: #ffeaa7;"></i>
+                            MySql
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-database fa-beat fa-xl" style="color: #ffeaa7;"></i>
+                            PHPMyAdmin
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
     </div>
 </template>
 <script>
@@ -48,14 +109,37 @@ export default {
 
 </script>
 <style scoped lang="scss">
+@use '../styles/partials/variables' as*;
+@use '../styles/partials/mixins' as*;
+
 .Home-page {
     min-height: 100vh;
     color: white;
 }
 
+.back-end,
+.front-end {
+    ul {
+        height: 180px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        list-style-type: none;
+
+        li {
+            padding-top: 1rem;
+
+            i {
+                padding-right: 0.5rem;
+            }
+        }
+    }
+}
+
 .title {
     padding-bottom: 2rem;
-    padding-top: 5rem;
+    padding-top: 2rem;
+    color: $color-text-gold;
 }
 
 .bar {
